@@ -9,13 +9,13 @@
 <meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Farrux &amp; Kamila — Toý çakylygy">
-<meta property="og:description" content="25.10.2026 · Ýekşenbe, 18:00 · “Seýran”, Şabat etraby">
+<meta property="og:description" content="25.10.2026, ýekşenbe, 18:00 — “Seýran”, Şabat etraby">
 <meta property="og:image" content="https://eerrggaasshhbbeekk.github.io/TOY/og.jpg">
 <meta property="og:url" content="https://eerrggaasshhbbeekk.github.io/TOY/">
 <link rel="preload" href="fonts/great-vibes-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* ---------- Şriftler (öz serwerimizde, Google Fonts-a bagly däl) ---------- */
+/* ---------- Şriftler (öz faýllarymyz, Google Fonts-a bagly däl) ---------- */
 @font-face{font-family:"Great Vibes";font-display:swap;font-weight:400;src:url(fonts/great-vibes-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:"Cormorant";font-display:swap;font-weight:400;font-style:italic;src:url(fonts/cormorant-garamond-latin-400-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Cormorant";font-display:swap;font-weight:400;font-style:italic;src:url(fonts/cormorant-garamond-latin-ext-400-italic.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -39,24 +39,26 @@
   --ink:#5b4a3a;
   --serif:"Cormorant","Cormorant Garamond",Georgia,"Times New Roman",serif;
   --script:"Great Vibes","Snell Roundhand",cursive;
+  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cg fill='none' stroke='%23b8954f' stroke-opacity='.17'%3E%3Crect x='19' y='19' width='18' height='18'/%3E%3Crect x='19' y='19' width='18' height='18' transform='rotate(45 28 28)'/%3E%3Ccircle cx='28' cy='28' r='3'/%3E%3C/g%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  font-family:var(--serif);color:var(--ink);
-  background:#efe5d2 radial-gradient(ellipse at 50% 0%,#fbf6ea 0%,#f3e9d6 55%,#ecdfc8 100%) fixed;
-  min-height:100vh;overflow-x:hidden;
+  font-family:var(--serif);color:var(--ink);min-height:100vh;overflow-x:hidden;
+  background:var(--pattern),radial-gradient(ellipse at 50% 0%,#fbf6ea 0%,#f3e9d6 55%,#ecdfc8 100%) fixed;
+  background-color:#efe5d2;
 }
 body.locked{overflow:hidden;height:100vh}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 a{color:inherit}
+:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
 
-/* ---------- Kagyz (sahypa) ---------- */
-.page{max-width:520px;margin:0 auto;padding:16px 14px 40px}
+/* ---------- Kagyz bölümler ---------- */
+.page{max-width:520px;margin:0 auto;padding:18px 16px 40px}
 .framed{
-  position:relative;background:radial-gradient(ellipse at 50% 40%,var(--paper-2) 0%,var(--paper) 70%,#f3e8d4 100%);
-  border:1.5px solid var(--gold);padding:30px 22px;margin-bottom:16px;text-align:center;
-  box-shadow:0 10px 30px -18px rgba(90,60,20,.45);
+  position:relative;text-align:center;margin-bottom:22px;padding:32px 22px;
+  background:radial-gradient(ellipse at 50% 40%,var(--paper-2) 0%,var(--paper) 70%,#f3e8d4 100%);
+  border:1.5px solid var(--gold);box-shadow:0 14px 34px -20px rgba(90,60,20,.5);
 }
 .framed::before{content:"";position:absolute;inset:7px;border:1px solid rgba(197,162,92,.55);pointer-events:none}
 .corner{position:absolute;width:52px;height:52px;color:var(--gold);pointer-events:none}
@@ -64,27 +66,50 @@ a{color:inherit}
 .corner.bl{bottom:0;left:0;transform:scaleY(-1)}.corner.br{bottom:0;right:0;transform:scale(-1,-1)}
 
 .caps{font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);font-size:15px;padding-left:.32em}
-.italic{font-style:italic;font-weight:400}
 .medallion{width:46px;height:46px;color:var(--gold);margin:6px auto 18px;display:block}
 
+/* Gül çemenleri */
+.garland{position:absolute;width:150px;height:150px;pointer-events:none;z-index:3}
+.garland svg{width:100%;height:100%;display:block;transform-origin:12% 12%;animation:sway 7s ease-in-out infinite alternate}
+.g-tl{top:-16px;left:-16px}
+.g-br{bottom:-16px;right:-16px;transform:rotate(180deg)}
+.g-tr{top:-16px;right:-16px;transform:scaleX(-1)}
+.g-bl{bottom:-16px;left:-16px;transform:scaleY(-1)}
+@keyframes sway{from{transform:rotate(-1.5deg)}to{transform:rotate(2deg)}}
+body:not(.opened) .hero .garland svg{transform:scale(.2);opacity:0}
+body.opened .hero .garland svg{animation:grow 1.4s cubic-bezier(.2,.9,.3,1.2) .2s both,sway 7s ease-in-out 1.6s infinite alternate}
+@keyframes grow{from{transform:scale(.2) rotate(-25deg);opacity:0}to{transform:none;opacity:1}}
+
 /* ---------- Esasy kart ---------- */
-.hero{padding-top:36px;padding-bottom:36px}
+.hero{padding-top:40px;padding-bottom:36px}
 .invite{font-style:italic;font-weight:500;color:var(--sage);font-size:clamp(22px,6.4vw,28px);margin:10px 0 26px;line-height:1.2}
 .circle{
   width:min(78vw,340px);aspect-ratio:1;margin:0 auto 30px;border-radius:50%;position:relative;
-  background:radial-gradient(circle at 50% 45%,#f6e4e4 0%,var(--rose) 55%,var(--rose-2) 100%);
+  background:radial-gradient(circle at 50% 45%,#f7e6e6 0%,var(--rose) 55%,var(--rose-2) 100%);
   border:4px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;
-  box-shadow:0 0 0 3px var(--paper),0 0 0 4px rgba(197,162,92,.35),0 14px 30px -16px rgba(123,36,57,.45);
+  box-shadow:0 0 0 3px var(--paper),0 0 0 4px rgba(197,162,92,.35),0 18px 34px -16px rgba(123,36,57,.5);
 }
-.circle::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1px dotted rgba(197,162,92,.8)}
+.circle::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1.5px dotted rgba(197,162,92,.9);animation:spin 120s linear infinite}
 .circle::after{content:"";position:absolute;inset:22px;border-radius:50%;border:1px solid rgba(197,162,92,.55)}
+.shine{position:absolute;inset:0;border-radius:50%;overflow:hidden;pointer-events:none}
+.shine::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-70%;width:45%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-18deg);animation:shine 8s ease-in-out 5s infinite}
+@keyframes shine{0%{left:-70%}22%,100%{left:140%}}
 .circle .caps{font-size:13px;margin-bottom:2px;position:relative;z-index:1}
-.names{font-family:var(--script);color:var(--wine);line-height:.95;position:relative;z-index:1;font-size:clamp(46px,14.5vw,66px)}
+.names{font-family:var(--script);font-weight:400;color:var(--wine);line-height:.95;position:relative;z-index:1;font-size:clamp(46px,14.5vw,66px)}
+.names .w{display:block}
 .names .amp{display:block;color:var(--gold-deep);font-size:.62em;line-height:1.05}
+/* Atlar elde ýazylýan ýaly peýda bolýar */
+body:not(.opened) .names .w{clip-path:inset(-30% 100% -30% -15%)}
+body:not(.opened) .names .amp{opacity:0}
+body.opened .names .w1{animation:write 1.5s cubic-bezier(.55,.1,.35,1) .5s both}
+body.opened .names .amp{animation:pop .7s ease 1.9s both}
+body.opened .names .w2{animation:write 1.6s cubic-bezier(.55,.1,.35,1) 2.3s both}
+@keyframes write{from{clip-path:inset(-30% 100% -30% -15%)}to{clip-path:inset(-30% -15% -30% -15%)}}
+@keyframes pop{from{opacity:0;transform:scale(.4) rotate(-20deg)}to{opacity:1;transform:none}}
 
 .date{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;max-width:360px;margin:0 auto}
-.date .m,.date .y{font-weight:600;letter-spacing:.2em;color:var(--gold-deep);font-size:clamp(16px,4.8vw,20px)}
-.date .m,.date .y{text-transform:uppercase}
+.date .m,.date .y{font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-size:clamp(16px,4.8vw,20px)}
 .date .m{text-align:right}.date .y{text-align:left}
 .date .d{font-weight:600;color:var(--wine);font-size:58px;line-height:1;padding:4px 16px;border-left:1.5px solid var(--gold);border-right:1.5px solid var(--gold)}
 .when{max-width:300px;margin:12px auto 0;padding:8px 0;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);font-style:italic;font-weight:500;color:var(--sage);font-size:20px}
@@ -93,14 +118,16 @@ a{color:inherit}
 .divider i{display:block;width:70px;height:1px;background:currentColor}
 .divider b{display:block;width:8px;height:8px;background:currentColor;transform:rotate(45deg)}
 
-.scroll-hint{margin-top:26px;color:var(--gold-deep);font-size:14px;font-style:italic;display:flex;flex-direction:column;align-items:center;gap:4px}
+.scroll-hint{margin-top:26px;color:var(--gold-deep);font-size:15px;font-style:italic;display:flex;flex-direction:column;align-items:center;gap:4px}
 .scroll-hint svg{width:18px;height:18px;animation:bob 2s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(5px)}}
 
 /* ---------- Countdown ---------- */
 .count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
-.unit{border:1px solid rgba(197,162,92,.7);background:rgba(240,217,218,.35);padding:12px 2px 9px;position:relative}
+.unit{border:1px solid rgba(197,162,92,.7);background:rgba(240,217,218,.38);padding:12px 2px 9px;overflow:hidden}
 .unit .n{display:block;font-weight:600;color:var(--wine);font-size:clamp(28px,8.5vw,38px);line-height:1;font-variant-numeric:tabular-nums}
+.unit .n.flip{animation:flip .45s ease}
+@keyframes flip{from{transform:translateY(-55%);opacity:0}to{transform:none;opacity:1}}
 .unit .l{display:block;margin-top:6px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
 .done{display:none;font-style:italic;font-weight:500;color:var(--wine);font-size:24px;margin-top:16px}
 .is-done .count{display:none}.is-done .done{display:block}
@@ -120,12 +147,13 @@ a{color:inherit}
 .btn svg{width:18px;height:18px}
 
 /* ---------- Soňky bölüm ---------- */
-.honor{font-style:italic;font-weight:500;color:var(--sage);font-size:22px;line-height:1.3}
+.closing{padding:44px 26px}
+.honor{font-style:italic;font-weight:500;color:var(--sage);font-size:23px;line-height:1.3}
 .regards{font-style:italic;color:var(--gold-deep);font-size:19px}
-.family{text-transform:uppercase;font-weight:600;letter-spacing:.2em;color:var(--wine);font-size:clamp(14px,4.3vw,18px);margin-top:8px;padding-left:.2em;line-height:1.5}
+.family{font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--wine);font-size:clamp(14px,4.3vw,18px);margin-top:8px;padding-left:.2em;line-height:1.5}
 .foot{text-align:center;font-family:var(--script);color:var(--gold-deep);font-size:30px;margin:8px 0 70px}
 
-/* ---------- Dil saýlaýjy we aýdym düwmesi ---------- */
+/* ---------- Dil we aýdym ---------- */
 .langs{position:fixed;top:10px;right:10px;z-index:60;display:flex;gap:2px;padding:3px;background:rgba(251,247,238,.92);border:1px solid var(--gold);border-radius:20px;box-shadow:0 4px 14px -8px rgba(0,0,0,.3)}
 .langs button{font-weight:600;font-size:12px;letter-spacing:.08em;padding:5px 9px;border-radius:16px;color:var(--gold-deep)}
 .langs button[aria-pressed="true"]{background:var(--wine);color:#fff}
@@ -138,53 +166,77 @@ a{color:inherit}
 .music:not(.playing)::after{content:"";position:absolute;width:30px;height:1.5px;background:var(--wine);transform:rotate(-45deg)}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ---------- Giriş (çakylygy açyň) ---------- */
-#intro{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.door{position:absolute;top:0;bottom:0;width:50.5%;background:radial-gradient(ellipse at 100% 50%,#fbf6ec 0%,#f3e8d4 70%,#ead9bd 100%);transition:transform 1.4s cubic-bezier(.7,0,.25,1) .55s}
-.door.l{left:0}
-.door.r{right:0;transform-origin:right;background:radial-gradient(ellipse at 0% 50%,#fbf6ec 0%,#f3e8d4 70%,#ead9bd 100%)}
-.door::after{content:"";position:absolute;inset:14px;border:1px solid rgba(197,162,92,.6)}
-.door.l::after{right:-1px;border-right:0}.door.r::after{left:-1px;border-left:0}
-.intro-c{position:relative;z-index:2;text-align:center;padding:0 24px;transition:opacity .5s,transform .7s}
-.intro-c .hint{font-style:italic;font-weight:500;color:var(--sage);font-size:22px;margin:8px 0 22px}
-.seal{width:150px;height:150px;margin:0 auto;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:radial-gradient(circle at 45% 40%,#a8394f 0%,var(--wine) 60%,#5e1a2b 100%);
-  box-shadow:0 0 0 5px var(--paper-2),0 0 0 6.5px var(--gold),0 16px 30px -10px rgba(94,26,43,.6);
-  font-family:var(--script);color:#f6e3c6;font-size:44px;line-height:1;padding-right:6px;animation:pulse 2.6s ease-in-out infinite}
-.seal span{font-size:.6em;margin:0 2px;color:#e8c98e}
-@keyframes pulse{50%{transform:scale(1.04)}}
-.open-btn{margin-top:30px;padding:14px 30px;border:1.5px solid var(--gold);background:var(--paper-2);color:var(--wine);
+/* ---------- Giriş: konwert ---------- */
+#intro{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:var(--pattern),radial-gradient(ellipse at 50% 45%,#fbf6ec 0%,#f3e8d4 65%,#e8d6b8 100%);background-color:#f3e8d4}
+.intro-c{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%}
+.intro-top,.open-btn{transition:opacity .45s,transform .45s}
+.intro-top .hint{font-style:italic;font-weight:500;color:var(--sage);font-size:22px;margin-top:8px}
+.stage{width:min(82vw,330px);margin:34px auto 0;position:relative}
+.env{position:relative;width:100%;aspect-ratio:3/2;perspective:900px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.env-back{position:absolute;inset:0;background:linear-gradient(#e2bfbf,#d9b1b2);border-radius:5px;box-shadow:0 22px 40px -18px rgba(94,26,43,.55)}
+.letter{position:absolute;left:7%;right:7%;top:7%;bottom:6%;z-index:2;background:var(--paper-2);border:1px solid var(--gold);
+  box-shadow:inset 0 0 0 4px var(--paper-2),inset 0 0 0 5px rgba(197,162,92,.55);
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:9%}
+.letter .ln{font-family:var(--script);color:var(--wine);font-size:clamp(20px,6.4vw,27px);line-height:1}
+.letter .ld{font-weight:600;letter-spacing:.24em;color:var(--gold-deep);font-size:12px;margin-top:6px}
+.pocket{position:absolute;inset:0;z-index:3;border-radius:5px;background:linear-gradient(165deg,#f8e9e5,#efd6d4 60%,#e9cbca);
+  clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.pocket svg,.flap svg{position:absolute;inset:0;width:100%;height:100%}
+.flap-w{position:absolute;left:0;right:0;top:0;height:58%;z-index:4;transform-origin:50% 0;filter:drop-shadow(0 3px 3px rgba(94,26,43,.18))}
+.flap{position:absolute;inset:0;background:linear-gradient(#f5e2df,#ecd2d0);clip-path:polygon(0 0,100% 0,50% 100%)}
+.seal{position:absolute;left:50%;top:57%;z-index:5;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-family:var(--script);color:#f4dfc0;font-size:26px;padding-right:3px;
+  background:radial-gradient(circle at 38% 32%,#b2475d 0%,var(--wine) 55%,#5a1828 100%);
+  box-shadow:0 0 0 3px #8d2e44,0 0 0 4px rgba(244,223,192,.35),0 8px 16px -6px rgba(60,10,20,.6);
+  animation:pulse 2.6s ease-in-out infinite}
+.seal span{color:#e6c487;font-size:.7em;margin:0 1px}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.open-btn{margin-top:34px;padding:14px 30px;border:1.5px solid var(--gold);background:var(--paper-2);color:var(--wine);
   font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:15px;box-shadow:0 0 0 3px var(--paper),0 0 0 4px rgba(197,162,92,.5)}
-.bloom{position:absolute;left:50%;top:50%;width:0;height:0;z-index:3;pointer-events:none}
-.bloom svg{position:absolute;width:var(--s);height:var(--s);left:calc(var(--s) / -2);top:calc(var(--s) / -2);opacity:0;transform:scale(0) rotate(-90deg)}
-#intro.opening .intro-c{opacity:0;transform:scale(.85)}
-#intro.opening .bloom svg{animation:burst 1.5s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--d)}
-@keyframes burst{
-  0%{opacity:0;transform:translate(0,0) scale(0) rotate(-120deg)}
-  35%{opacity:1}
-  70%{opacity:1;transform:translate(var(--x),var(--y)) scale(1) rotate(0)}
-  100%{opacity:0;transform:translate(calc(var(--x) * 1.5),calc(var(--y) * 1.5)) scale(1.1) rotate(20deg)}
-}
-#intro.opening .door.l{transform:translateX(-102%)}
-#intro.opening .door.r{transform:translateX(102%)}
+
+/* Açylyş yzygiderligi */
+#intro.opening .intro-top,#intro.opening .open-btn{opacity:0;transform:translateY(-8px)}
+#intro.opening .seal{animation:sealBreak .55s ease-in forwards}
+#intro.opening .flap-w{animation:flapOpen .8s cubic-bezier(.5,0,.3,1) .35s forwards}
+#intro.opening .letter{animation:letterOut 1s cubic-bezier(.3,.7,.2,1) 1.05s forwards}
+#intro.opening .stage{animation:stageOut .9s ease-in 2.05s forwards}
+#intro.opening{animation:introOut .8s ease 2.4s forwards}
+@keyframes sealBreak{30%{transform:scale(1.18)}100%{transform:scale(.1) rotate(-30deg);opacity:0}}
+@keyframes flapOpen{0%{transform:rotateX(0);z-index:4}49%{z-index:4}50%{z-index:1}100%{transform:rotateX(180deg);z-index:1}}
+@keyframes letterOut{to{transform:translateY(-62%)}}
+@keyframes stageOut{to{transform:translateY(-14%) scale(1.35);opacity:0}}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
 #intro.gone{display:none}
 
-/* Gülleriň ýagyşy */
-.petal{position:fixed;top:-30px;z-index:40;pointer-events:none;width:var(--w);height:var(--w);animation:fall var(--t) linear var(--d) 2 both}
-@keyframes fall{
-  0%{transform:translate(0,-5vh) rotate(0)}
-  100%{transform:translate(var(--dx),110vh) rotate(var(--r))}
+/* Gül we altyn ýalpyldy partlamasy */
+.burst{position:absolute;left:50%;top:50%;width:0;height:0;z-index:6;pointer-events:none}
+.burst svg,.burst i{position:absolute;opacity:0}
+.burst svg{width:var(--s);height:var(--s);left:calc(var(--s) / -2);top:calc(var(--s) / -2)}
+.burst i{width:var(--s);height:var(--s);left:calc(var(--s) / -2);top:calc(var(--s) / -2);border-radius:50%;
+  background:radial-gradient(circle,#fff6d8 0%,#e8c56f 45%,rgba(197,162,92,0) 72%)}
+#intro.opening .burst svg{animation:bloom 1.6s cubic-bezier(.2,.8,.2,1) var(--d) forwards}
+#intro.opening .burst i{animation:glint 1.3s ease-out var(--d) forwards}
+@keyframes bloom{
+  0%{opacity:0;transform:translate(0,0) scale(0) rotate(-140deg)}
+  30%{opacity:1}
+  70%{opacity:1;transform:translate(var(--x),var(--y)) scale(1) rotate(0)}
+  100%{opacity:0;transform:translate(calc(var(--x) * 1.45),calc(var(--y) * 1.45)) scale(1.08) rotate(25deg)}
 }
+@keyframes glint{0%{opacity:0;transform:translate(0,0) scale(.3)}20%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1)}}
 
-/* Görünýänçä animasiýa */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+/* Gül ýapraklarynyň ýagyşy */
+.petal{position:fixed;top:-30px;z-index:40;pointer-events:none;width:var(--w);height:var(--w);animation:fall var(--t) linear var(--d) 2 both}
+@keyframes fall{0%{transform:translate(0,-5vh) rotate(0)}100%{transform:translate(var(--dx),110vh) rotate(var(--r))}}
+
+/* Bölümleriň ýuwaşja peýda bolşy */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
 .rv.in{opacity:1;transform:none}
 
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}
   .rv{opacity:1;transform:none}
 }
-@media (min-width:560px){.page{padding-top:28px}}
 </style>
 </head>
 <body class="locked">
@@ -204,14 +256,14 @@ a{color:inherit}
       <circle cx="23" cy="23" r="3" fill="#c97c86"/>
     </symbol>
     <symbol id="flower" viewBox="-50 -50 100 100">
-      <g fill="var(--pf,#e9b8bf)" stroke="var(--ps,#c98591)" stroke-width="1.2">
+      <g style="fill:var(--pf,#e9b8bf);stroke:var(--ps,#c98591)" stroke-width="1.2">
         <ellipse rx="15" ry="27" cy="-22"/>
         <ellipse rx="15" ry="27" cy="-22" transform="rotate(72)"/>
         <ellipse rx="15" ry="27" cy="-22" transform="rotate(144)"/>
         <ellipse rx="15" ry="27" cy="-22" transform="rotate(216)"/>
         <ellipse rx="15" ry="27" cy="-22" transform="rotate(288)"/>
       </g>
-      <g fill="var(--pi,#f5d6da)">
+      <g style="fill:var(--pi,#f5d6da)">
         <ellipse rx="8" ry="15" cy="-13" transform="rotate(36)"/>
         <ellipse rx="8" ry="15" cy="-13" transform="rotate(108)"/>
         <ellipse rx="8" ry="15" cy="-13" transform="rotate(180)"/>
@@ -221,8 +273,25 @@ a{color:inherit}
       <circle r="8" fill="#d6b06a"/>
       <circle r="4" fill="#b88b3e"/>
     </symbol>
+    <symbol id="leaf" viewBox="0 -10 44 20">
+      <path d="M0 0C10-11 32-11 44 0C32 11 10 11 0 0Z" fill="#a9b99a" stroke="#7d9171" stroke-width=".8"/>
+      <path d="M2 0H40" stroke="#7d9171" stroke-width=".7"/>
+    </symbol>
+    <symbol id="garland" viewBox="0 0 170 170">
+      <path d="M34 34C74 22 116 16 166 20M34 34C22 74 16 116 20 166" fill="none" stroke="#c5a25c" stroke-width="1.2"/>
+      <use href="#leaf" x="66" y="18" width="40" height="18" transform="rotate(-12 86 27)"/>
+      <use href="#leaf" x="102" y="10" width="32" height="15" transform="rotate(8 118 17)"/>
+      <use href="#leaf" x="18" y="66" width="40" height="18" transform="rotate(100 38 75)"/>
+      <use href="#leaf" x="8" y="104" width="32" height="15" transform="rotate(84 24 111)"/>
+      <use href="#leaf" x="52" y="52" width="36" height="16" transform="rotate(45 70 60)"/>
+      <circle cx="140" cy="20" r="4" fill="#e3a3ae"/><circle cx="150" cy="22" r="2.5" fill="#d6b06a"/>
+      <circle cx="20" cy="140" r="4" fill="#e3a3ae"/><circle cx="22" cy="150" r="2.5" fill="#d6b06a"/>
+      <use href="#flower" x="62" y="0" width="40" height="40" style="--pf:#f6e2c8;--ps:#c9a46a;--pi:#fbf0df"/>
+      <use href="#flower" x="0" y="62" width="40" height="40" style="--pf:#f3d3c7;--ps:#d39a86;--pi:#fae6dd"/>
+      <use href="#flower" x="2" y="2" width="70" height="70" style="--pf:#e3a3ae;--ps:#b9707e;--pi:#f3cfd4"/>
+    </symbol>
     <symbol id="petal" viewBox="0 0 20 20">
-      <path d="M10 1 C17 5 18 13 10 19 C2 13 3 5 10 1 Z" fill="var(--pc,#ecbcc3)"/>
+      <path d="M10 1 C17 5 18 13 10 19 C2 13 3 5 10 1 Z" style="fill:var(--pc,#ecbcc3)"/>
     </symbol>
   </defs>
 </svg>
@@ -234,31 +303,47 @@ a{color:inherit}
   <button type="button" data-lang="ru" aria-pressed="false">RU</button>
 </div>
 
-<!-- Giriş ekrany -->
+<!-- Giriş: möhürli konwert -->
 <div id="intro">
-  <div class="door l"></div><div class="door r"></div>
   <div class="intro-c">
-    <svg class="medallion"><use href="#medal"/></svg>
-    <p class="caps" data-i="eyebrow">Toý çakylygy</p>
-    <p class="hint" data-i="hint">Size çakylyk bar</p>
-    <div class="seal" aria-hidden="true">F<span>&amp;</span>K</div>
+    <div class="intro-top">
+      <svg class="medallion"><use href="#medal"/></svg>
+      <p class="caps" data-i="eyebrow">Toý çakylygy</p>
+      <p class="hint" data-i="hint">Size çakylyk bar</p>
+    </div>
+    <div class="stage">
+      <div class="env" id="env" aria-hidden="true">
+        <div class="env-back"></div>
+        <div class="letter"><span class="ln">Farrux &amp; Kamila</span><span class="ld">25.10.2026</span></div>
+        <div class="pocket">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none"><g fill="none" stroke="#c5a25c" stroke-width="1" vector-effect="non-scaling-stroke"><polyline points="0,0 50,56 100,0" vector-effect="non-scaling-stroke"/><polyline points="0,100 50,54 100,100" vector-effect="non-scaling-stroke"/><rect x="0" y="0" width="100" height="100" vector-effect="non-scaling-stroke"/></g></svg>
+        </div>
+        <div class="flap-w"><div class="flap">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="0,0 50,100 100,0" fill="none" stroke="#c5a25c" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+        </div></div>
+        <div class="seal">F<span>&amp;</span>K</div>
+      </div>
+      <div class="burst" id="burst"></div>
+    </div>
     <button class="open-btn" id="openBtn" type="button" data-i="open">Çakylygy açyň</button>
   </div>
-  <div class="bloom" id="bloom"></div>
 </div>
 
 <main class="page">
   <!-- 1. Esasy kart -->
   <section class="framed hero">
+    <div class="garland g-tl" aria-hidden="true"><svg><use href="#garland"/></svg></div>
+    <div class="garland g-br" aria-hidden="true"><svg><use href="#garland"/></svg></div>
     <svg class="medallion rv"><use href="#medal"/></svg>
     <p class="caps rv" data-i="eyebrow">Toý çakylygy</p>
     <p class="invite rv" data-i="invite">Sizi toý baýramyna çagyrýarys</p>
-    <div class="circle rv">
+    <div class="circle">
+      <div class="shine"></div>
       <p class="caps" data-i="toy">Toý</p>
-      <h1 class="names">Farrux<span class="amp">&amp;</span>Kamila</h1>
+      <h1 class="names"><span class="w w1">Farrux</span><span class="amp">&amp;</span><span class="w w2">Kamila</span></h1>
     </div>
     <div class="date rv">
-      <span class="m" data-i="month">OKTÝABR</span>
+      <span class="m" data-i="month">Oktýabr</span>
       <span class="d">25</span>
       <span class="y">2026</span>
     </div>
@@ -289,7 +374,7 @@ a{color:inherit}
     <p class="venue rv" data-i="venue">“Seýran”</p>
     <p class="area rv" data-i="area">Şabat etraby</p>
     <p class="when rv" data-i="when">Ýekşenbe, sagat 18:00</p>
-    <p class="coords rv">VVWW+X9J Gigant · 41.89747, 59.89590</p>
+    <p class="coords rv">VVWW+X9J Gigant, 41.89747, 59.89590</p>
     <a class="btn rv" href="https://www.google.com/maps/search/?api=1&amp;query=41.8974744,59.8959026" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
       <span data-i="map">Kartada görmek</span>
@@ -297,7 +382,9 @@ a{color:inherit}
   </section>
 
   <!-- 4. Hormat bilen -->
-  <section class="framed">
+  <section class="framed closing">
+    <div class="garland g-tr" aria-hidden="true"><svg><use href="#garland"/></svg></div>
+    <div class="garland g-bl" aria-hidden="true"><svg><use href="#garland"/></svg></div>
     <p class="honor rv" data-i="honor">Siziň gelmegiňiz biziň üçin uly hormat</p>
     <div class="divider rv"><i></i><b></b><i></i></div>
     <p class="regards rv" data-i="regards">Hormat bilen</p>
@@ -314,6 +401,7 @@ a{color:inherit}
 <script>
 (function(){
   "use strict";
+  var reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- Terjimeler ---------- */
   var T = {
@@ -361,58 +449,66 @@ a{color:inherit}
   });
   setLang(lang);
 
-  /* ---------- Burç bezegleri ---------- */
+  /* ---------- Burç bezegleri (gül çemeni ýok burçlara) ---------- */
   var frames = document.querySelectorAll(".framed");
   for (var f=0; f<frames.length; f++){
+    var fr = frames[f];
     ["tl","tr","bl","br"].forEach(function(p){
-      frames[f].insertAdjacentHTML("beforeend",'<svg class="corner '+p+'" aria-hidden="true"><use href="#corner"/></svg>');
+      if (fr.querySelector(".g-"+p)) return;
+      fr.insertAdjacentHTML("beforeend",'<svg class="corner '+p+'" aria-hidden="true"><use href="#corner"/></svg>');
     });
   }
 
   /* ---------- Countdown: 25.10.2026 18:00 (Aşgabat, UTC+5) ---------- */
   var target = Date.UTC(2026, 9, 25, 13, 0, 0);
   var cdBox = document.getElementById("countdown");
-  var elD = document.getElementById("cd-d"), elH = document.getElementById("cd-h"),
-      elM = document.getElementById("cd-m"), elS = document.getElementById("cd-s");
+  var cells = [document.getElementById("cd-d"),document.getElementById("cd-h"),document.getElementById("cd-m"),document.getElementById("cd-s")];
   function pad(n){ return n<10 ? "0"+n : ""+n; }
+  function put(el, v){
+    if (el.textContent === v) return;
+    el.textContent = v;
+    if (!reduced){ el.classList.remove("flip"); void el.offsetWidth; el.classList.add("flip"); }
+  }
   function tick(){
     var ms = target - Date.now();
     if (ms <= 0){ cdBox.classList.add("is-done"); return; }
     var s = Math.floor(ms/1000);
-    elD.textContent = Math.floor(s/86400);
-    elH.textContent = pad(Math.floor(s%86400/3600));
-    elM.textContent = pad(Math.floor(s%3600/60));
-    elS.textContent = pad(s%60);
+    put(cells[0], ""+Math.floor(s/86400));
+    put(cells[1], pad(Math.floor(s%86400/3600)));
+    put(cells[2], pad(Math.floor(s%3600/60)));
+    put(cells[3], pad(s%60));
     setTimeout(tick, 1000 - (Date.now()%1000));
   }
   tick();
 
-  /* ---------- Görünende peýda bolmak ---------- */
-  var rv = document.querySelectorAll(".rv");
+  /* ---------- Bölümleriň peýda bolşy ---------- */
+  var rv = document.querySelectorAll(".rv"), io = null;
   if ("IntersectionObserver" in window){
-    var io = new IntersectionObserver(function(en){
+    io = new IntersectionObserver(function(en){
       en.forEach(function(x){ if (x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target); } });
     }, {threshold:.15});
-    for (var r=0;r<rv.length;r++){ rv[r].style.transitionDelay = (r%6)*90+"ms"; }
+    for (var r=0;r<rv.length;r++) rv[r].style.transitionDelay = (r%6)*90+"ms";
   } else { for (var q=0;q<rv.length;q++) rv[q].classList.add("in"); }
   function startReveal(){ if (io) for (var r2=0;r2<rv.length;r2++) io.observe(rv[r2]); }
 
-  /* ---------- Açylyşdaky güller ---------- */
-  var bloom = document.getElementById("bloom");
+  /* ---------- Gül we ýalpyldy partlamasy ---------- */
+  var burst = document.getElementById("burst");
   var palettes = [["#e9b8bf","#c98591","#f5d6da"],["#f3d3c7","#d39a86","#fae6dd"],["#d98c9a","#a85567","#efc2ca"],["#f6e2c8","#c9a46a","#fbf0df"]];
-  var html = "";
-  var N = 14;
-  for (var k=0;k<N;k++){
-    var a = (k/N)*Math.PI*2 + (k%2)*.2;
-    var dist = 110 + (k%3)*55;
+  var html = "", N = 14, k, a, dist;
+  for (k=0;k<N;k++){
+    a = (k/N)*Math.PI*2 + (k%2)*.2;
+    dist = 120 + (k%3)*60;
     var p = palettes[k%palettes.length];
-    var size = 54 + (k%4)*16;
-    html += '<svg style="--s:'+size+'px;--x:'+Math.round(Math.cos(a)*dist)+'px;--y:'+Math.round(Math.sin(a)*dist)+'px;--d:'+(k%5)*60+'ms;--pf:'+p[0]+';--ps:'+p[1]+';--pi:'+p[2]+'"><use href="#flower"/></svg>';
+    html += '<svg style="--s:'+(52+(k%4)*16)+'px;--x:'+Math.round(Math.cos(a)*dist)+'px;--y:'+Math.round(Math.sin(a)*dist)+'px;--d:'+(1300+(k%5)*70)+'ms;--pf:'+p[0]+';--ps:'+p[1]+';--pi:'+p[2]+'"><use href="#flower"/></svg>';
   }
-  bloom.innerHTML = html;
+  for (k=0;k<22;k++){
+    a = Math.random()*Math.PI*2; dist = 80 + Math.random()*170;
+    html += '<i style="--s:'+(6+Math.random()*10)+'px;--x:'+Math.round(Math.cos(a)*dist)+'px;--y:'+Math.round(Math.sin(a)*dist)+'px;--d:'+(1200+Math.random()*500)+'ms"></i>';
+  }
+  burst.innerHTML = html;
 
   function petalRain(){
-    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (reduced) return;
     var cols = ["#ecbcc3","#f3d3c7","#e3a3ae","#f6e2c8"];
     var frag = document.createDocumentFragment();
     for (var i=0;i<18;i++){
@@ -431,55 +527,50 @@ a{color:inherit}
   var music = (function(){
     var AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) return null;
-    var ctx, master, timer, nextT = 0, idx = 0, playing = false;
+    var ctx, master, timer, origin = 0, idx = 0, off = 0, playing = false;
     var BEAT = 60/64;
     function hz(m){ return 440*Math.pow(2,(m-69)/12); }
-    var events = []; // [beat, midi, length, volume]
+    var events = [];
     var bass = [50,45,47,42,43,38,43,45];
     var arp  = [[62,66,69,66],[57,61,64,61],[59,62,66,62],[54,57,61,57],[55,59,62,59],[50,54,57,54],[55,59,62,59],[57,61,64,61]];
     var m1 = [78,76,74,73,71,69,71,73];
     var m2 = [74,73,71,69,67,66,67,64];
     var m3 = [74,78,81,79,78,74,78,76,74,71,74,69,67,71,69,67];
-    function section(off, mel, step){
+    function section(o, mel, step){
       for (var c=0;c<8;c++){
-        events.push([off+c*2, bass[c], 2.4, .5]);
-        for (var e=0;e<4;e++) events.push([off+c*2+e*.5, arp[c][e], 1.2, .16]);
+        events.push([o+c*2, bass[c], 2.4, .5]);
+        for (var e=0;e<4;e++) events.push([o+c*2+e*.5, arp[c][e], 1.2, .16]);
       }
-      if (mel) for (var i=0;i<mel.length;i++) events.push([off+i*step, mel[i], step*1.6, .42]);
+      if (mel) for (var i=0;i<mel.length;i++) events.push([o+i*step, mel[i], step*1.6, .42]);
     }
     section(0, null, 2); section(16, m1, 2); section(32, m2, 2); section(48, m3, 1);
-    events.sort(function(a,b){ return a[0]-b[0]; });
-    var LOOP = 64;
+    events.sort(function(x,y){ return x[0]-y[0]; });
+    var LOOP = 64, first = 0;
+    while (events[first][0] < 16) first++;   // giriş bir gezek, soň 16–64 gaýtalanýar
 
     function note(t, midi, len, vol){
-      var f = hz(midi);
       var g = ctx.createGain();
       g.gain.setValueAtTime(0.0001, t);
       g.gain.exponentialRampToValueAtTime(vol, t+0.006);
       g.gain.exponentialRampToValueAtTime(0.0001, t+len*BEAT+0.6);
       g.connect(master);
-      var o1 = ctx.createOscillator(); o1.type = "sine"; o1.frequency.value = f;
-      var o2 = ctx.createOscillator(); o2.type = "sine"; o2.frequency.value = f*(midi<52?2:4.02);
+      var o1 = ctx.createOscillator(); o1.type = "sine"; o1.frequency.value = hz(midi);
+      var o2 = ctx.createOscillator(); o2.type = "sine"; o2.frequency.value = hz(midi)*(midi<52?2:4.02);
       var g2 = ctx.createGain(); g2.gain.setValueAtTime(midi<52?.5:.18, t); g2.gain.exponentialRampToValueAtTime(0.0001, t+0.5);
       o1.connect(g); o2.connect(g2); g2.connect(g);
       var end = t+len*BEAT+0.7;
       o1.start(t); o2.start(t); o1.stop(end); o2.stop(end);
     }
-    // Giriş (0–16 urgy) bir gezek, soň 16–64 aralyk gaýtalanýar
-    var firstAfterIntro = 0;
-    while (events[firstAfterIntro][0] < 16) firstAfterIntro++;
-    var off = 0;
     function schedule(){
       for (;;){
         var ev = events[idx];
-        var t = nextT + (ev[0] + off) * BEAT;
+        var t = origin + (ev[0] + off) * BEAT;
         if (t > ctx.currentTime + 0.4) break;
         if (t > ctx.currentTime - 0.05) note(t, ev[1], ev[2], ev[3]);
         idx++;
-        if (idx >= events.length){ idx = firstAfterIntro; off += LOOP - 16; }
+        if (idx >= events.length){ idx = first; off += LOOP - 16; }
       }
     }
-
     return {
       start:function(){
         if (!ctx){
@@ -490,41 +581,48 @@ a{color:inherit}
           var fb = ctx.createGain(); fb.gain.value = .22;
           master.connect(comp); master.connect(dl); dl.connect(fb); fb.connect(dl); dl.connect(comp);
           comp.connect(ctx.destination);
-          nextT = ctx.currentTime + 0.1;
+          origin = ctx.currentTime + 0.1;
         }
         if (ctx.state === "suspended") ctx.resume();
         if (!timer) timer = setInterval(schedule, 100);
         playing = true;
       },
       stop:function(){ if (ctx) ctx.suspend(); playing = false; },
-      get playing(){ return playing; }
+      isPlaying:function(){ return playing; }
     };
   })();
 
   var mBtn = document.getElementById("musicBtn");
-  function syncBtn(){ mBtn.classList.toggle("playing", !!(music && music.playing)); }
+  var userPaused = false, opened = false;
+  function syncBtn(){ mBtn.classList.toggle("playing", !!(music && music.isPlaying())); }
   mBtn.addEventListener("click", function(){
     if (!music) return;
-    if (music.playing) music.stop(); else music.start();
-    userPaused = !music.playing; syncBtn();
+    if (music.isPlaying()) music.stop(); else music.start();
+    userPaused = !music.isPlaying(); syncBtn();
   });
-  var userPaused = false;
   document.addEventListener("visibilitychange", function(){
-    if (!music) return;
-    if (document.hidden && music.playing){ music.stop(); syncBtn(); }
-    else if (!document.hidden && !userPaused && !music.playing && opened){ music.start(); syncBtn(); }
+    if (!music || !opened) return;
+    if (document.hidden && music.isPlaying()){ music.stop(); syncBtn(); }
+    else if (!document.hidden && !userPaused && !music.isPlaying()){ music.start(); syncBtn(); }
   });
 
-  /* ---------- Çakylygy açmak ---------- */
-  var opened = false;
+  /* ---------- Konwerti açmak ---------- */
   var intro = document.getElementById("intro");
-  document.getElementById("openBtn").addEventListener("click", function(){
+  function openInvite(){
     if (opened) return; opened = true;
     if (music){ try { music.start(); } catch(e){} mBtn.classList.add("show"); syncBtn(); }
     intro.classList.add("opening");
-    setTimeout(function(){ document.body.classList.remove("locked"); startReveal(); petalRain(); }, 900);
-    setTimeout(function(){ intro.classList.add("gone"); }, 2100);
-  });
+    var wait = reduced ? 0 : 2300;
+    setTimeout(function(){
+      document.body.classList.remove("locked");
+      document.body.classList.add("opened");
+      window.scrollTo(0,0);
+      startReveal(); petalRain();
+    }, wait);
+    setTimeout(function(){ intro.classList.add("gone"); }, reduced ? 50 : 3300);
+  }
+  document.getElementById("openBtn").addEventListener("click", openInvite);
+  document.getElementById("env").addEventListener("click", openInvite);
 })();
 </script>
 </body>
